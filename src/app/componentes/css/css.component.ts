@@ -31,7 +31,7 @@ export class CssComponent {
  
  filtroGlobal: string = '';
   cardNameValue: any;
-
+  
   lastTouchTime: number = 0;
   touchTimeout: any;
   cardCodeValue: any;
