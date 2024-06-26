@@ -1,0 +1,106 @@
+<app-navbar/>
+
+ 
+  <div class="card mt-3">
+    <p-table
+        #dt1
+        [value]="usuarios"
+        [paginator]="true"
+        [rows]="5"
+        [showCurrentPageReport]="true"  
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[5, 10, 15]"
+        [responsive]="true"
+        styleClass="p-datatable-gridlines align-items-center mt-3 me-5"
+        class="text-xs"
+        [globalFilterFields]="['name', 'email', 'password']"
+    >
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1?.filterGlobal(filtroGlobal, 'contains')" [(ngModel)]="filtroGlobal" placeholder="Search keyword" />
+                
+            </span>
+        </div>
+    </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+               
+                <th style="width:25%">Nombre</th>
+                <th style="width:10%">Email</th>
+                <th style="width:10%">Password</th>
+                <th style="width:10%">confirmPassword</th>
+                <th style="width:10%">Acciones</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-usuarios>
+            <tr>
+               
+                <td>{{ usuarios.name }}</td>
+                <td>{{ usuarios.email }}</td>
+                <td>{{ usuarios.password }}</td>
+                <td>{{ usuarios.confirmPassword }}</td>
+                <td>
+                    <div class="button-group">
+                        <button pButton pRipple type="button" class="p-button-danger" label="Eliminar" (click)="onDelete(usuarios)"></button>
+                        <button pButton pRipple type="button" class="p-button-primary ml-2" label="Editar" (click)="openModal(usuarios)"></button>
+                      </div>
+                </td>
+                
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+       
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+          
+        </ng-template>
+    </p-table>
+</div>
+
+<button pButton pRipple (click)="dirigir()" label="Ir a Sexy Component" class="p-button-success"></button>
+
+
+<p-dialog 
+[(visible)]="modal" 
+[style]="{ width: '500px' }" 
+header="Editar" 
+[modal]="true" 
+styleClass="p-fluid text-xs text-center">
+
+  <ng-template pTemplate="content">
+    <div class="container">
+      <form>
+        <div>
+            <div >
+                <label for="name">Name</label>
+                <input id="name" type="text" pInputText [(ngModel)]="selectedUser.name" name="name" />
+              </div>
+              <div class="p-field">
+                <label for="email">Email</label>
+                <input id="email" type="email" pInputText [(ngModel)]="selectedUser.email" name="email" />
+              </div>
+              <div >
+                <label for="password">Password</label>
+                <p-password id="password" [toggleMask]="true"   [(ngModel)]="selectedUser.password" name="password" />
+             
+              </div>
+              <div >
+                <label for="confirmPassword">Confirm Password</label>
+                <p-password id="confirmPassword" [toggleMask]="true"  [(ngModel)]="selectedUser.confirmPassword" name="confirmPassword" />
+              
+              </div>
+        </div>
+    
+        <div class="row">
+          <p-button type="button" label="Editar" class="p-button-success" (click)="onEdit()"></p-button>
+          <p-button type="button" label="Cerrar" (click)="hideDialog()" styleClass="p-button-danger"></p-button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,129 @@
+
+<app-navbar/>
+
+
+<div class="contenedor">
+
+ 
+  
+    <div class="input1">
+      <span class="p-input-icon-left w-full ">
+          <i class="pi pi-search"></i>
+          <input type="text" class="w-full" pInputText (input)="filtrarProductos()" [(ngModel)]="filtroTexto"  placeholder="Buscar ..." />
+          
+      </span>
+  
+  </div>
+    <div class="contenedor-conciertos">
+        @for (producto of productosPaginados; track $index) {
+            <div class="card">
+                <div class="imagen">
+                    <img class="card-img-top" [src]="producto.imageUrl" alt="producto.name">
+                  </div>
+                  <div class="textos">
+                    <p>{{ producto.name }}</p>
+                    <p>Precio: {{ producto.precio }}</p>
+                    <p-button styleClass="p-button-outlined" class="redondo" label="Comprar" (click)="mostrarDetalles(producto)" ></p-button>
+                  </div>
+            </div>
+        }
+   
+    </div>
+  
+    <div class="botones">
+        <div>
+            <button class="p-button p-button-outlined" (click)="irPaginaAnterior()" [disabled]="paginaActual === 1">Página Anterior</button>
+        </div>
+      <div>
+        <button class="p-button p-button-outlined" (click)="irPaginaSiguiente()" [disabled]="paginaActual === totalPages">Página Siguiente</button>
+      </div>
+     
+    </div>
+  
+    <p-dialog [(visible)]="mostrarModal" header="{{ productoSeleccionado?.name }}" [style]="{'max-width': '80vw'}">
+      <ng-template pTemplate="content">
+       
+        <div class="modal-content">
+          <img class="modal-img" [src]="productoSeleccionado?.imageUrl" alt="productoSeleccionado?.name">
+          <div class="predescrip">
+            <p>Precio: {{ calcularPrecio() }}</p>
+            <p class="mb-2">Descripcion: {{productoSeleccionado?.descripcion}}</p>
+          </div>
+        
+          <div class="stepper-button-container">
+            
+            <div class="stepper">
+              <p-button class="stepper-button" size="small"  styleClass="p-button-outlined"  (click)="decrementarCantidad()">-</p-button>
+              <p class="cantidad">{{ cantidadProductos }}</p>
+              <p-button class="stepper-button"  size="small"  styleClass="p-button-outlined" (click)="incrementarCantidad()">+</p-button>
+            </div>
+        
+           
+            <div class="boton-agregar">
+              <p-button styleClass="p-button-outlined" size="small" class="redondo" label="Agregar" (click)="agregarAlCarrito()" ></p-button>
+            </div>
+          </div>
+  
+  
+  
+        </div>
+      </ng-template>
+    </p-dialog>
+  
+    
+    
+    
+  
+  </div>
+  
+  
+  <div class="carrito-icono" (click)="imprimirProductosCarrito()" >
+    <i class="pi pi-shopping-cart"></i>
+  
+    <span class="contador">{{ cantidadProductosEnCarrito }}</span>
+  </div>
+  
+  
+  <div class="carrito-icono" (click)="abrirCarrito()">
+    <i class="pi pi-shopping-cart"></i>
+    <span class="contador">{{ cantidadProductosEnCarrito }}</span>
+  </div>
+  
+
+  
+  <p-dialog [(visible)]="mostrarCarrito" header="Carrito de Compras" [style]="{'max-width': '90%'}" [responsive]="true">
+    <ng-template pTemplate="content">
+      <div class="modal-content1">
+        <div class="table-wrapper">
+          <p-table [value]="productosAgregados" [scrollable]="true" [scrollHeight]="'auto'" [responsiveLayout]="'scroll'">
+            <ng-template pTemplate="body" let-product let-index="rowIndex">
+              <tr>
+                <td>{{ product.cantidad }}</td>
+                <td>
+                  <img [src]="product.producto.imageUrl" [alt]="product.producto.name" width="60" class="shadow-4" />
+                </td>
+                <td>{{ product.producto.name }}</td>
+                <td>{{ product.producto.precio | currency:'USD' }}</td>
+                <td>
+                  <p-button icon="pi pi-times" label="" styleClass="p-button-danger" (click)="eliminarProducto(index)"></p-button>
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+              <span>Precio total de {{ calcularPrecioTotal() | currency:'USD' }}</span>
+            </ng-template>
+          </p-table>
+        </div>
+        <div class="flex justify-content-center mt-3 gap-2 botoneM">
+          <p-button icon="pi pi-check" label="Aceptar" styleClass="p-button-primary"></p-button>
+          <p-button icon="pi pi-times" label="Cancelar" styleClass="p-button-danger" (click)=" hideDialog()" ></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-dialog>
+  
+  
+
+  
+  
+  

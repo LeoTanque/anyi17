@@ -1,0 +1,6 @@
+<app-navbar/>
+<div class="row">
+    @for (item of images; track $index) {
+        <div class="items"> <img [src]="item.img" alt=""></div>
+    }
+</div>

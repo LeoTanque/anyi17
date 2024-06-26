@@ -1,0 +1,35 @@
+.flex-container {
+   display: flex;
+   gap: 10px;
+   background-color: chartreuse;
+   justify-content: center;
+   border: 2px solid red;
+   padding: 20px;
+   height: 100%;
+   flex-wrap: wrap;
+  align-items: center;
+  padding: 5px;
+  margin: 20px;
+
+ 
+}
+
+.flex-container >* {
+    border-radius: 10px;
+    background-color: aqua;
+    padding: 50px;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+   //margin: 10px;
+   
+}
+
+.flex-container >*:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.08);
+}
+
+
+
+  

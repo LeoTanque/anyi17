@@ -1,0 +1,55 @@
+
+  
+  <div class="container" [class.right-panel-active]="rightPanelActive">
+    <div class="form-container sign-up-container">
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        <h1>Create Account</h1>
+      
+        <span>or use your email for registration</span>
+        <input type="text" pInputText placeholder="Name" formControlName="name" />
+        
+        <input type="email" pInputText placeholder="Email" formControlName="email" />
+        <input type="password" pInputText placeholder="Password" formControlName="password" />
+        <input type="password" pInputText placeholder="Confirm Password" formControlName="confirmPassword" />
+        <!--button type="submit">Sign Up</button-->
+        <button pButton pRipple class="button" type="submit" label="Sign Up" class="p-button-success"></button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <h1>Sign in</h1>
+       
+        <span>or use your account</span>
+        <!--input type="email" placeholder="Email" formControlName="email" /-->
+        <input type="email" pInputText placeholder="Email" formControlName="email" />
+        <!--input type="password" placeholder="Password" formControlName="password" /-->
+        <input type="password" pInputText placeholder="Password" formControlName="password" />
+        <a href="#">Forgot your password?</a>
+        <!--button type="submit">Sign In</button-->
+        <button pButton pRipple class="button" type="submit" label="Sign In" class="p-button-success"></button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <!--button class="ghost" (click)="togglePanel()">Sign In</button-->
+          <!--p-button label="Sign In" class="ghost"  (click)="togglePanel()" severity="danger"></p-button-->
+          <button pButton pRipple  label="Sign In" class="p-button-success" (click)="togglePanel()" severity="warning"></button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <!--button class="ghost" (click)="togglePanel()">Sign Up</button-->
+          <!--p-button label="Sign Up" class="ghost" (click)="togglePanel()" severity="danger"></p-button-->
+          <button pButton pRipple  label="Sign Up" class="p-button-success" (click)="togglePanel()" severity="warning"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+

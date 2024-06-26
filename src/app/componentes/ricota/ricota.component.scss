@@ -1,0 +1,35 @@
+.p-toolbar-group-align-right {
+    margin-left: auto;
+    
+}
+
+.p-toolbar-buttons-spacing .p-button {
+    margin-right: 8px; /* Ajusta el valor según tu preferencia */
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+  
+    .ml-2 {
+      margin-left: 0.5rem; // Ajusta el espacio entre botones según sea necesario
+    }
+  }
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+  }
+
+.container div {
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

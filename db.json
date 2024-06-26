@@ -1,0 +1,101 @@
+{
+  "users": [
+    {
+      "id": "ad52",
+      "name": "pichi",
+      "email": "pichi@gmail.com",
+      "password": "Pichi.123",
+      "confirmPassword": "Pichi.123"
+    },
+    {
+      "id": "5099",
+      "name": "leo",
+      "email": "leo@gmail.com",
+      "password": "Leodanis.123",
+      "confirmPassword": "Leodanis.123"
+    },
+    {
+      "id": "aab2",
+      "name": "odanis",
+      "email": "odanis@gmail.com",
+      "password": "Odanis.123",
+      "confirmPassword": "Odanis.123"
+    }
+  ],
+  "login": [],
+  "products": [
+    {
+      "id": "1",
+      "name": "Ridgeline",
+      "imageUrl": "../../../../assets/fotos/ridgeline.jpg",
+      "precio": 200,
+      "descripcion": "hjfv"
+    },
+    { 
+      "id": "2",
+      "name": "Fit",
+      "imageUrl": "../../../assets/fotos/fit.jpg",
+      "precio": 400,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "3",
+      "name": "Civic",
+      "imageUrl": "../../../../assets/fotos/civic.jpg",
+      "precio": 100,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "4",
+      "name": "Cr_v",
+      "imageUrl": "../../../../assets/fotos/cr_v.jpg",
+      "precio": 300,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "5",
+      "name": "Oddyssey",
+      "imageUrl": "../../../../assets/fotos/oddyssey.jpg",
+      "precio": 500,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "6",
+      "name": "Pilot",
+      "imageUrl": "../../../../assets/fotos/pilot.jpg",
+      "precio": 300,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "7",
+      "name": "Wr_v",
+      "imageUrl": "../../../../assets/fotos/wr_v.jpg",
+      "precio": 400,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "8",
+      "name": "Todo R",
+      "imageUrl": "../../../../assets/fotos/todo_repuestos.jpg",
+      "precio": 100,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "7",
+      "name": "Llantas",
+      "imageUrl": "../../../../assets/fotos/llantas.jpg",
+      "precio": 400,
+      "descripcion": "hjfv"
+    },
+    {
+      "id": "8",
+      "name": "Accesorios",
+      "imageUrl": "../../../../assets/fotos/accesorios.jpg",
+      "precio": 100,
+      "descripcion": "hjfv"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
