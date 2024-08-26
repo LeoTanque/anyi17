@@ -72,7 +72,7 @@
   
     
     
-    
+  
   
   </div>
   
@@ -86,7 +86,7 @@
   
   <div class="carrito-icono" (click)="abrirCarrito()">
     <i class="pi pi-shopping-cart"></i>
-    <span class="contador">{{ cantidadProductosEnCarrito }}</span>
+    <span class="contador">{{ productosAgregados.length }}</span>
   </div>
   
 
@@ -123,7 +123,33 @@
   </p-dialog>
   
   
-
+  <!--div class="shopping-cart" [ngClass]="{ 'visible': mostrarCarrito }">
+    <div class="shopping-cart-products">
+      <div *ngFor="let product of productosAgregados, let i = index" class="shopping-cart-product">
+        
+          <div class="product-info">
+            <div>
+              <h3>{{  product.cantidad }}</h3>
+              <p>{{ product.producto.precio | currency }} &times; {{ product.cantidad }}</p>
+            </div>
+            <img [src]="product.producto.imageUrl"  />
+          </div>
+          <div class="product-count">
+         
+            <span>{{ product.cantidad }}</span>
+          
+            <button >Remove</button>
+         
+          </div>
+        
+      
+      </div>
+    </div>
+    <div class="shopping-cart-summary">
+      <div>Total: <b>{{ calcularPrecioTotal() | currency }}</b></div>
+      <div><button >Purchase</button></div>
+    </div>
+  </div-->
   
   
   

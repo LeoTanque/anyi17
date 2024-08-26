@@ -20,6 +20,13 @@
       "email": "odanis@gmail.com",
       "password": "Odanis.123",
       "confirmPassword": "Odanis.123"
+    },
+    {
+      "id": "c1b1",
+      "name": "Luis",
+      "email": "luis@gmail.com",
+      "password": "Luis.123",
+      "confirmPassword": "Luis.123"
     }
   ],
   "login": [],
@@ -31,7 +38,7 @@
       "precio": 200,
       "descripcion": "hjfv"
     },
-    { 
+    {
       "id": "2",
       "name": "Fit",
       "imageUrl": "../../../assets/fotos/fit.jpg",

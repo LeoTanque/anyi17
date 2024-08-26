@@ -288,13 +288,15 @@ this.servicioService.obtenerProductos().subscribe(res=>{
 
   
 
-
+ 
   
   
   abrirCarrito(): void {
     this.mostrarCarrito = true;
     this.imprimirProductosCarrito()
   }
+
+  
 
   reset() {
     this.sc.scrollToIndex(0, 'smooth');

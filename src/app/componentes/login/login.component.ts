@@ -233,6 +233,7 @@ export class LoginComponent implements OnInit{
         this.showErrorAlert('Error desconocido.');
       }
     }
+    this.loginForm.reset()
   }
   
 
